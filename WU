@@ -1,0 +1,50 @@
+1. Xây dựng giao diện cơ bản bằng HTML
+- Tạo nên form đăng ký với các ô điền tên, mật khẩu, chọn giới tính,... 
+- Sử dụng thẻ <form> để gửi dữ liệu.
+- Dùng các <input> (ô nhập), <select> (chọn giới tính), <button> (nút gửi).
+- Đặt name="..." cho từng ô để bên PHP có thể “đọc” được giá trị người dùng nhập.
+
+2. Xử lý DL bằng PHP
+- Nhận dữ liệu người dùng gửi lên bằng $_POST.
+- Kết nối CSDL với MySQL.
+- Câu lệnh SQL INSERT để ghi dữ liệu vào bảng users.
+- Hiển thị thông báo nếu thêm thành công, hoặc báo lỗi nếu có gì sai.
+
+3. Tạo cơ sở dữ liệu và bảng bằng MySQL
+- Dùng câu lệnh SQL để tạo cơ sở dữ liệu (CREATE DATABASE).
+    CREATE DATABASE user_TH;
+    USE user_TH;
+- Tạo bảng users chứa các cột như username, password, email,...
+    CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    name VARCHAR(100),
+    gender VARCHAR(10),
+    email VARCHAR(100),
+    address VARCHAR(255),
+    phone VARCHAR(20)
+);
+    SHOW TABLES;
+    DESCRIBE users;
+- Chèn thử vài dòng dữ liệu (INSERT INTO) để test.
+    INSERT INTO users (username, password, name, gender, email, address, phone)
+    VALUES ('admin123', '123456', 'Nguyễn Văn A', 'Nam', 'admin@email.com', 'Hà Nội', '0123456789');
+
+4. Sử dụng XAMPP để mở hiển thị Localhost
+- Mở XAMPP, bật Apache và MySQL.
+- Đặt file PHP vào thư mục htdocs.
+- Truy cập file qua trình duyệt bằng địa chỉ như localhost/ten-thu-muc/....
+
+5. Cách hoạt động để làm Task:
+- Người dùng nhập dữ liệu trên trình duyệt.
+- Nhấn nút gửi → form gửi dữ liệu lên file PHP.
+- PHP lấy dữ liệu, mở kết nối đến MySQL.
+- Nếu kết nối thành công → ghi dữ liệu vào bảng.
+- Hiện thông báo thành công hoặc lỗi.
+
+👉 Tổng kết:
+- HTML để tạo form.
+- PHP để xử lý và giao tiếp với database.
+- MySQL để lưu trữ dữ liệu.
+- XAMPP để tạo môi trường chạy web tại chỗ.
